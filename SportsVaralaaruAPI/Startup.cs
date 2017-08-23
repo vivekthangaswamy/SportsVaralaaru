@@ -31,6 +31,8 @@ namespace SportsVaralaaruAPI
 
             services.AddDbContext<SportsVaralaaruAPIContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("SportsVaralaaruAPIContext")));
+
+          
         }
 
 
