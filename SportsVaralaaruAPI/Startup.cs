@@ -8,6 +8,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Microsoft.EntityFrameworkCore;
+using SportsVaralaaruAPI.Models;
 
 namespace SportsVaralaaruAPI
 {
@@ -26,6 +28,9 @@ namespace SportsVaralaaruAPI
         {
             services.AddMvc();
             services.AddEntityFrameworkSqlServer();
+
+            services.AddDbContext<SportsVaralaaruAPIContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("SportsVaralaaruAPIContext")));
         }
 
 
